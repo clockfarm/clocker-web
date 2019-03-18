@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <link rel='icon' href='favicon.ico' type='image/x-icon'/ >
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>clock.farm</title>
+        <style>
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            html, body {
+                height: 100%;
+                width: 100%;
+            }
+
+            body {
+                background: black;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .clock {
+                height: 20vh;
+                color: white;
+                font-size: 22vh;
+                font-family: sans-serif;
+                line-height: 20.4vh;
+                display: flex;
+                position: relative;
+                /*background: green;*/
+                overflow: hidden;
+            }
+
+            .clock::before, .clock::after {
+                content: '';
+                width: 7ch;
+                height: 3vh;
+                background: linear-gradient(to top, transparent, black);
+                position: absolute;
+                z-index: 2;
+            }
+
+            .clock::after {
+                bottom: 0;
+                background: linear-gradient(to bottom, transparent, black);
+            }
+
+            .clock > div {
+                display: flex;
+            }
+
+            .tick {
+                line-height: 17vh;
+            }
+
+            .tick-hidden {
+                opacity: 0;
+            }
+
+            .move {
+                animation: move linear 1s infinite;
+            }
+
+            @keyframes move {
+            from {
+                transform: translateY(0vh);
+            }
+                to {
+                    transform: translateY(-20vh);
+                }
+            }
+            
+            .btn-outline-warning {
+                position: fixed;
+                bottom: 250px;
+                right: 150px;
+            }
+            
+            .btn-outline-secondary {
+                position: fixed;
+                bottom: 250px;
+                right: 50;
+            }
+            
+            .btn-outline-info {
+                position: fixed;
+                bottom: 250px;
+                left: 150px;
+            }
+
+            .header{
+                position: fixed;
+                color: white;
+                top: 20px;
+                left: 50; 
+            }
+            
+            .description{
+                position: fixed;
+                color: white;
+                top: 70px;
+                left: 50; 
+            }
+            
+            .mainData{
+                position: fixed;
+                color: white;
+                bottom: 500px;
+                left: 50;
+                font-size: 25px;
+                text-align: center;
+            }
+            
+            .footer{
+                position: fixed;
+                color: white;
+                bottom: 10px;
+                left: 50; 
+            }
+            
+        </style>
+
+    </head>
+
+    <body>
+
+        <div class="header">
+            <h1>Clocker</h1>
+        </div>
+        
+        <div class="description">
+            <h2>Clock for DJ's, Developer's, Student's, Sportsmen's and just for Everyone!</h2>
+        </div>
+        
+        <div class="mainData">
+            <p>
+                Clocker is available on all desktop platforms. Choose one to start download! <br> Free forever!
+            </p>
+        
+        </div>
+        
+        <button type="button" class="btn btn-outline-info" onclick="location.href='https://github.com/clockfarm/clocker-desktop-win/archive/master.zip'">Windows</button>
+        <button type="button" class="btn btn-outline-secondary" onclick="location.href='#'">macOS</button>
+        <button type="button" class="btn btn-outline-warning" onclick="location.href='#'">Linux</button>
+        
+        <div class="footer">
+            <h7>Fully free open source project! Code on <a href="https://github.com/clockfarm/">GitHub</a></h7>
+        </div>
+        
+
+    </body>
+
+</html>
